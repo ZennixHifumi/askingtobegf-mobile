@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New GF?</title>
+    <link rel="stylesheet" href="Projectlove.css">
+  </head>
+  <body>
+    <div id="content">
+      <p>Will You Be My Girlfriend??</p>
+    </div>
+    <button class="yes" onclick="playSoundAndShowPopup()">Yes :D</button>
+    <button class="no" onclick="moveButton()">No :&lpar;</button>
+    <img class="letter" src="/needimage.html/letterl.jpeg" alt="" hidden />
+    <div class="gif">
+      <img src="https://i.pinimg.com/originals/0d/9d/c0/0d9dc0e014e173618adcf22fa8f47a9c.gif" alt="gif" width="200" height="200" />
+    </div>
+
+    <div class="popup" id="popup">
+      <img src="https://i.pinimg.com/originals/15/0f/78/150f78d18fd597611f77b4ae7d2f1f58.gif" alt="popup-gif" />
+      <p>I Love You sm, Thanks for accepting me :D</p>
+    </div>
+
+    <audio id="noAudio">
+      <source src="/needimage.html/No.mp3" type="audio/mpeg" />
+    </audio>
+    
+    <audio id="yesAudio">
+      <source src="/needimage.html/yay.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      const yesButton = document.querySelector(".yes");
+      const noButton = document.querySelector(".no");
+      const letterElement = document.querySelector(".letter");
+      const textContainerElement = document.querySelector(".text-container");
+      const popupElement = document.getElementById("popup");
+      const noAudio = document.getElementById("noAudio");
+      const yesAudio = document.getElementById("yesAudio");
+
+      noButton.addEventListener("click", () => {
+        const randomLeft = Math.random() * window.innerWidth;
+        const randomTop = Math.random() * window.innerHeight;
+        noButton.style.left = `${randomLeft}px`;
+        noButton.style.top = `${randomTop}px`;
+        noAudio.play();
+      });
+      
+      function playSoundAndShowPopup() {
+        yesAudio.play();
+        popupElement.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
